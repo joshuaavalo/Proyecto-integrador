@@ -2,7 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import Cards from './components/Cards';
 import Nav from './components/Nav';
-import useApp from './hooks/useApp';
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About/About';
+import Details from './components/Details/Details';
 
 const URL = 'https://rickandmortyapi.com/api/character/'
 
@@ -46,8 +48,25 @@ function App() {
 
    return (
       <div className='App'>
+         
          <Nav onSearch={onSearch} />
-         <Cards characters={characters} onClose={onClose} />
+
+         <Routes>
+             <Route path='/Home' element={
+               <Cards 
+                characters={characters}
+                onClose={onClose}
+               />
+             }/>
+
+             <Route path='/About' element={
+                <About />
+             }/>
+
+             <Route path='/detail/:detailId' element={<Details />}/>
+         </Routes>
+      
+      
       </div>
    );
 }
