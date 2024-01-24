@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./Details.module.css"
 
-const Detail = ()=>{
-    let { detailId } = useParams(); // { detailId: value }
+const Details = ()=>{
+    let { detailId } = useParams();
+    console.log("soy el console.log " + detailId); // { detailId: value }
     const [character, setCharacter] = useState({})
     
     useEffect(() => {
@@ -39,4 +40,4 @@ const Detail = ()=>{
     )
 }
 
-export default Detail;
+export default Details;

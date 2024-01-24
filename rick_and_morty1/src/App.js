@@ -63,7 +63,7 @@ function App() {
                 <About />
              }/>
 
-             <Route path='/detail/:detailId' element={<Details />}/>
+             <Route path='/details/:detailId' element={<Details />}/>
          </Routes>
       
       
